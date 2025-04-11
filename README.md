@@ -1,6 +1,5 @@
 # Задание про интеграционный сервис
 
-## Способ 1:
 - `git clone https://github.com/Etsor/BookRegistryService`
 - Запустить `docker-compose up` в папке `BookRegistryService/docker`
 
