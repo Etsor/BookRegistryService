@@ -8,12 +8,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
 @Getter
 @Setter
 @Entity
+@Builder
+@AllArgsConstructor
 @Table(name = "books")
 public class Book {
 	@Id
@@ -44,9 +48,10 @@ public class Book {
 	@Column(nullable = false)
 	public Date dateAdded;
 
-	public Book(String isbn, String title, String authors,
-    		String genre, String publisher, int yearOfPublication,
-    		int pages, Date date_added) {
+	public Book(
+			String isbn, String title, String authors,
+			String genre, String publisher, int yearOfPublication,
+			int pages, Date date_added) {
         this.isbn = isbn;
         this.title = title;
         this.authors = authors;
@@ -59,20 +64,5 @@ public class Book {
 
 	public Book() {
 
-	}
-
-	@Override
-	public String toString() {
-		return "Book{" +
-				"id=" + id +
-				", isbn='" + isbn + '\'' +
-				", title='" + title + '\'' +
-				", authors='" + authors + '\'' +
-				", genre='" + genre + '\'' +
-				", publisher='" + publisher + '\'' +
-				", year_of_publication=" + yearOfPublication +
-				", pages=" + pages +
-				", date_added=" + dateAdded +
-				'}';
 	}
 }
