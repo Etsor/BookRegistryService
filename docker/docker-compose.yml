@@ -17,7 +17,7 @@ services:
     image: "postgres"
     container_name: db
     expose:
-      - "5432"
+      - "5434"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
