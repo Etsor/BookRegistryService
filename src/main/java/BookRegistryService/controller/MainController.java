@@ -33,8 +33,8 @@ public class MainController {
 	@Operation(
 		summary = 	"""
 					Возвращает информацию о всех книгах во внутреннем
-                    хранилище (с возможностью указания сортировки по названию книги или
-                    издательству(title/publisher), а также информацию о всех книгах, данные
+					хранилище (с возможностью указания сортировки по названию книги или
+					издательству(title/publisher), а также информацию о всех книгах, данные
 					о которых поступили позже указанной даты (формат даты - yyyy-MM-dd)).
 					"""
 	)
@@ -66,7 +66,9 @@ public class MainController {
 			}
 		}
 
-		List<BookDTO> bookDTOs = books.stream().map(BookMapper::toDTO).collect(Collectors.toList()); 
+		List<BookDTO> bookDTOs = books.stream().map(BookMapper::toDTO)
+			.collect(Collectors.toList()); 
+		
 		return ResponseEntity.ok(bookDTOs);
 	}
 
